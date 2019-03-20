@@ -35,6 +35,12 @@ public class Sorter implements SearchingSortingInterface{
         }
 		return list;
 	}
+	public ArrayList<Integer> mergeSort(ArrayList<Integer> list)
+	{
+		return mergeSort(list,0,list.size()-1);
+	}
+
+
 	public ArrayList<Integer> mergeSort(ArrayList<Integer> list, int lo, int n){
 			int low = lo;
 			int high = n;
@@ -53,7 +59,7 @@ public class Sorter implements SearchingSortingInterface{
 				else{
 					int temp = list.get(startHigh);
 				for (int k = startHigh-1;k>=low;k--){
-					list.set(k+1,k);
+					list.set(k+1,list.get(k));
 				}
 				list.set(low,temp);
 				low++;
@@ -62,6 +68,10 @@ public class Sorter implements SearchingSortingInterface{
 			}
 }
 		return list;
+	}
+	public boolean binarySearch(ArrayList<Integer> list, int x){
+
+		return true;
 	}
 
 
