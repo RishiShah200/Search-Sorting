@@ -70,8 +70,28 @@ public class Sorter implements SearchingSortingInterface{
 		return list;
 	}
 	public boolean binarySearch(ArrayList<Integer> list, int x){
+		int min = 0;
+		int max = list.size()-1;
+		while(min<=max){
+			int mid = (min+max)/2;
+			if(list.get(mid) < x)
+				min = mid + 1;
+			else if (list.get(mid) > x)
+				max = mid - 1;
+			else if (list.get(mid) == x)
+				return true;
 
-		return true;
+		}
+		return false;
+	}
+
+	public boolean linearSearch(ArrayList<Integer> list, int x){
+		for(int k = 0; k<list.size();k++){
+			if(list.get(k) == x)
+				return true;
+		}
+		return false;
+
 	}
 
 
